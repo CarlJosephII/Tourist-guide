@@ -1,0 +1,109 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.6
+-- http://www.phpmyadmin.net
+--
+-- Máquina: localhost
+-- Data de Criação: 13-Jan-2015 às 18:01
+-- Versão do servidor: 5.0.51
+-- versão do PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Base de Dados: `angoturismo`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id` int(11) NOT NULL auto_increment,
+  `usuario` varchar(50) NOT NULL,
+  `comentario` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Extraindo dados da tabela `comentarios`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `galeria`
+--
+
+CREATE TABLE `galeria` (
+  `id` int(5) NOT NULL auto_increment,
+  `nome` varchar(50) NOT NULL,
+  `imagem` varchar(50) NOT NULL,
+  `descricao` varchar(50) default NULL,
+  `tipo` varchar(50) NOT NULL,
+  `gastos` varchar(100) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `galeria`
+--
+
+INSERT INTO `galeria` (`id`, `nome`, `imagem`, `descricao`, `tipo`, `gastos`) VALUES
+(1, 'Provincia de Benguela', 'images/benguela20ks3.jpg', 'Testando', 'Viver', '10.000 kz'),
+(2, 'Provincia de Luanda', 'images/zango1.jpg', 'Testando', 'Viver', '10.000 kz'),
+(3, 'Hotel Alvalade', 'images/Hotel_A.jpg', NULL, 'Dormir', '60.000 kz'),
+(4, 'Belas Shoping', 'images/belas.jpg', NULL, 'Lazer', '5.000 kz'),
+(5, 'Restaurante Ritz', 'images/rr2.jpg', NULL, 'Comer', '3.000 kz');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `propriedades`
+--
+
+CREATE TABLE `propriedades` (
+  `id` int(11) NOT NULL auto_increment,
+  `nome` varchar(50) NOT NULL,
+  `imagem` varchar(50) NOT NULL,
+  `preco` varchar(50) NOT NULL,
+  `tipo` varchar(50) NOT NULL,
+  `popularidade` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Extraindo dados da tabela `propriedades`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL auto_increment,
+  `nome` varchar(50) NOT NULL,
+  `sobrenome` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `pais` varchar(50) NOT NULL,
+  `cidade` varchar(50) NOT NULL,
+  `imagem` varchar(200) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `email`, `senha`, `pais`, `cidade`, `imagem`) VALUES
+(1, 'Prudencio', 'Shinne', 'prudencio_96@hotmail.com', '12345678', 'Angola', 'Luanda', 'imgs-users/p.png'),
+(2, 'Guilherme', 'William', 'carlosdera@live.com.pt', '4680803af384896f4314a38629a01495', 'Estados Unidos', 'Luanda', 'imgs-users/1455090_649176068467846_2013126364_n.jpg'),
+(3, 'Tarcio', 'Tutty', 'fra@gmai.com', '4a7d1ed414474e4033ac29ccb8653d9b', 'Argentina', '', 'imgs-users/image.png'),
+(4, 'Yuran', 'Bande', 'yuran@gmail.com', '4a7d1ed414474e4033ac29ccb8653d9b', 'Argentina', '', 'imgs-users/image.png'),
+(5, 'Abigail', 'José', 'Abi@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Argentina', '', 'imgs-users/image.png');
